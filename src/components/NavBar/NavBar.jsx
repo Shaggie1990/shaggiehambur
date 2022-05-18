@@ -1,26 +1,45 @@
-import CartWidget from "../CartWidget/CartWidget";
+//import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
 
-import '../NavBar/NavBar.css';
+// Forma correcta de importar 
+import  Container from 'react-bootstrap/Container'
+import  Nav  from 'react-bootstrap/Nav'
+import  Navbar  from 'react-bootstrap/Navbar'
+import  NavDropdown  from 'react-bootstrap/NavDropdown'
+import CartWidget from '../CartWidget/CartWidget'
+import { BsCart4 } from "react-icons/bs";
+import '../NavBar/NavBar.css'
 
 
-
-function NavBar() {
+import logo from '../images/logo.png';
+const NavBar = () => {
     return (
-        <header className="header">
-            <a className="header__logo" href="">
-                {/* <img className="header__img" src={logo} alt="" /> */}
-            </a>
-            <nav className="navBar">
-                <ul className="navBar__list">
-                    <li className="navBar__item"><a className="navBar__link" href="#">Hamburguesas</a></li>
-                    <li className="navBar__item"><a className="navBar__link" href="#">Lomos</a></li>
-                    <li className="navBar__item"><a className="navBar__link" href="#">Milanesas</a></li>
-                    <li className="navBar__item"><a className="navBar__link" href="#">Otros sándwiches</a></li>
-                </ul>
-            </nav>
+        
+        <Navbar collapseOnSelect expand="lg" variant="dark">
+            <Container>
             <CartWidget />
-        </header>
-    );
+                <Navbar.Brand href="#home"><img src= { logo } alt="logo"/> ShaggieBurguer</Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link href="#features">Milanesa</Nav.Link>
+                        <Nav.Link href="#pricing">Lomos</Nav.Link>
+                        <NavDropdown title="Hambuerguesa" id="collasible-nav-dropdown">
+                            <NavDropdown.Item href="#action/3.1">Clasica</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.2">Cheddar</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.3">Doble</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.3">Triple</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.3">Cuadruple</NavDropdown.Item>
+                        </NavDropdown>
+                    </Nav>
+                    <Nav>
+                        <Nav.Link href="#deets">Contactos</Nav.Link>
+                        
+                    </Nav>
+                </Navbar.Collapse>
+                <h3> < BsCart4 /> </h3>
+            </Container>
+        </Navbar>
+    )
 }
 
 export default NavBar
