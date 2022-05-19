@@ -47,9 +47,10 @@ const ItemListContainer = ({ saludo = 'saludo' }) => {
                 {loading ?
                   <h2>Cargando...</h2>
                   :
+                  
                   productos.map((prod) => <div
                     key={prod.id}
-                    className='col-md-10 w-20'
+                    className='col-md-4'
                   >
                     <div className="card  w-10 mt-5" >
                       <div className="card-header ">

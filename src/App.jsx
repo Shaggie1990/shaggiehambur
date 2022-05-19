@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import {BrowserRouter, Routes , Route} from 'react-router-dom'
 
 import Titulo from './components/Titulo/Titulo'
 import Formulario from './components/Formulario/Formulario'
@@ -9,7 +9,9 @@ import Formulario from './components/Formulario/Formulario'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar/NavBar'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import ItemListContainer from './Container/ItemListContainer/ItemListContainer';
+
+
 
 
 
@@ -20,8 +22,8 @@ function App() {
     const [bool, setBool]= useState(true)
 
     
-    const tit = 'Soy titulo de App'
-    const subTit = 'Soy subtitulo de App' 
+    const tit = 'ShaggieBurguer'
+    const subTit = 'ShaggieBurguer' 
 
     
 
